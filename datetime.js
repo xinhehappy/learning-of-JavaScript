@@ -1,0 +1,11 @@
+	now = new Date();
+	localtime = now.toString();
+	utctime = now.toGMTString();
+	hours = now.getHours();
+	mins = now.getMinutes();
+	secs = now.getSeconds();
+	document.write("<h1>");
+	document.write(hours + ":" + mins + ":" +secs);
+	document.write("</h1>");
+	document.write("<b>LocalTime:</b>" + localtime + "<BR>");
+	document.write("<b>UTC Time:</b>" + utctime + "<BR>");		
