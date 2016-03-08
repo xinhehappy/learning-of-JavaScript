@@ -1,0 +1,63 @@
+<<!DOCTYPE html>
+<html>
+<meta http-equiv="content-Type" content="text/html;charset=utf-8">
+<head>
+	<title>使用函数和对象</title>
+	<script type="text/javascript" >
+		function Greet(who) {
+			// body...
+			alert("Greet,"+who);
+		}
+		function Average(a,b,c,d) {
+			result = (a+b+c+c)/4;
+			return result;
+		}
+		function PrintCard()
+	{
+		line1="Name: "+this.name+"<br>\n";
+		line2="Address: "+this.address+"<br>\n";
+		line3="work: "+this.work+"<br>\n";
+		line4="Home: "+this.home+"<hr>\n";
+		document.write(line1,line2,line3,line4);
+	}
+
+		function Card(name,address,work,home) {
+			//this表示当前对象——由函数创建的那个对象
+			this.name=name;
+			this.address=address;
+			this.work=work;
+			this.home=home;
+			this.PrintCard=PrintCard;
+			//printcard方法是card的一个属性，必须定义到card中。
+	}
+	
+	function addhead(level)
+	{
+		html = "H"+level;
+		text = this.toString();
+		start = "<"+html +">";
+		stop = "</" +html+">";
+		return start+text+stop;
+	}
+	</script>
+</head>
+<body>
+	<p>prepare to greeting twice</p>
+	<script type="text/javascript">
+	score = Average(1,2,4,6);
+	document.write("the average score is :"+score+"<br>");
+	xinhe=new Card("xinhe","sz","teacher","usa");
+	holmes=new Card();
+	holmes.name="xinhe";
+	holmes.address="suzhou";
+	holmes.work="it";
+	holmes.home="tongliao";
+	holmes.PrintCard();
+	xinhe.PrintCard();
+	//向内置对象String中添加方法，使用prototype
+	String.prototype.heading=addhead;
+	document.write("this is a heading 1".heading(1));
+	document.write("this is a heading 2".heading(2));
+	</script>
+</body>
+</html>
