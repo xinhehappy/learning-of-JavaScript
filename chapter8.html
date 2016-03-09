@@ -1,0 +1,32 @@
+<<!DOCTYPE html>
+<html>
+	<meta http-equiv="content-Type" content="text/html;charset=utf-8">
+	<head>
+		<script type="text/javascript" src="prototype.js"></script>	
+		<script type="text/javascript" src="effects.js"></script>
+		<title>使用内置函数和程序库</title>
+	</head>
+	<body>
+		<h1>Test script.aculo.us effects</h1>
+		<form name=form1>
+			<input type="button" value="Fade out" onclick="new Effect.Fade($('test'))"></input>
+			<input type="button" value="Fade in" onclick="new Effect.Appear($('test'))"></input>
+			<input type="button" value="Slide Up" onclick="new Effect.SlideUp($('test'))"></input>
+			<input type="button" value="Slide Down" onclick="new Effect.SlideDown($('test'))"></input>
+			<input type="button" value="Highlight" onclick="new Effect.Highlight($('test'))"></input>
+			<input type="button" value="Shake" onclick="new Effect.Shake($('test'))"></input>
+		</form>
+		<div id="test" style="background-color:#ccc;margin: 20px;padding: 10px">
+		<h2>Testing Effects</h2>
+		<hr>
+		<p>
+			This section of the document is within a &lt;div&gt;element with the <b> id</b> value <b>test</b>.the event handlers on the buttons above sent this object to the 
+			<a href="http://script.aculo.us/">script.aculo.us</a>library to perform effects .click the button to see the effects
+		</p>
+		</div>
+
+		<hr>
+		<p><a href="https://www.baidu.com" onmouseover="window.alert('you moved over the link');">click here</a>
+		</p>
+	</body>
+</html>        

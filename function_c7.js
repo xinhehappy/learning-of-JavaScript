@@ -1,20 +1,16 @@
-now = new Date();
-hour = now.getHours();
-mins = now.getMinutes();
-secs = now.getSeconds();
-document.write("<h2>");
-document.write(hour + ":" + mins +":"+secs);
-document.write("</h2>");
-
-if(hour<10)
+names=new Array();
+i=0;
+do
 {
-	document.write("goodmorning");
-}
-else if(hour<18)
+	next=window.prompt("Enter the Next Name:","");
+	if (next > "") names[i]=next;
+	i=i+1;
+}while(next>"");
+document.write("<h2>"+names.length+" names entered.</h2>");
+names.sort();
+document.write("<ol>");
+for(i in names)
 {
-	document.write("goodafternoon");
+	document.write("<li>"+names[i]+"<br>");
 }
-else if(hour<24)
-{
-	document.write("goodeverning");
-}
+document.write("</ol>");
