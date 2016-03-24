@@ -1,0 +1,60 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>验证表单</title>
+	<meta http-equiv="content-type" content="text/html charset=utf-8 ">
+	<script type="text/javascript" >
+		function display() {
+			//新建一个窗口，在此窗口中显示一些表单信息
+			DisWin=window.open('','newWin','toolbar=no,status=no,width=300,height=200');
+			message="<ul><li><b>NAME:</b>"+document.form1.yourname.value+"</li>";
+			message +="<li><b>Address:</b>"+document.form1.youraddress.value+"</li>";
+			message +="<li><b>Phone:</b>"+document.form1.yourphone.value+"</li>"+"</ul>";
+			DisWin.document.write(message);
+		}
+		function validate()
+		{
+			var namelen=document.form2.yourname.value.length;
+			var addresslen=document.form2.youraddress.value.length;
+			var phonelen=document.form2.yourphone.value.length;
+			if(namelen<1)
+			{	
+				document.form2.yourname.focus();
+				alert("please enter yourname");
+				return false;
+			}
+			if(addresslen<1)
+			{
+				document.form2.youraddress.focus();
+				alert("please enter youraddress");
+				return false;
+			}
+			if(phonelen!=11)
+			{
+				document.form2.yourphone.focus();
+				alert("please enter your correct phone number.");
+				return false;
+			}
+			if(namelen>0&&addresslen>0&&phonelen==11)
+			{
+				alert("all data is correct.");
+				return true;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form name="form1" >
+		<p><b>Name:</b><input type="text" name="yourname" size="20"></input></p>
+		<p><b>Address:</b><input type="text" name="youraddress" size="30"></input></p>
+		<p><b>Phone:</b><input type="text" name="yourphone" size="30"></input></p>
+		<p><input type="button" value="Display" onclick="display();"></input></p>
+	</form>
+	<form name="form2" action="mailto:sa615145@mail.ustc.edu.cn" enctype="text/plain" method="POST" onsubmit="return validate();">
+		<p><b>Name:</b><input type="text" name="yourname" size="20"></input></p>
+		<p><b>Address:</b><input type="text" name="youraddress" size="30"></input></p>
+		<p><b>Phone:</b><input type="text" name="yourphone" size="30"></input></p>
+		<input type="submit" value="Submit"></input>
+	</form>
+</body>
+</html>

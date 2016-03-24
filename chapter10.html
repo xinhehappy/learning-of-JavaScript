@@ -1,0 +1,60 @@
+<<!DOCTYPE html>
+<html>
+
+<head>
+	<title>使用窗口和框架</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<script type="text/javascript">
+		//调整窗口大小，chrome浏览器没有打开ActiveX插件，所以不能调整，而IE浏览器可以。
+		function DoIt() {
+			if(form1.w.value&&form1.h.value)
+				{
+					//self主窗口
+					self.resizeTo(document.form1.w.value,document.form1.h.value);
+				}
+			if(form1.x.value&&form1.y.value)
+			{
+				self.moveTo(document.form1.x.value,document.form1.y.value);
+			}
+		}
+
+		var counter=0;
+		ID=window.setTimeout("Update()",2000);
+		//使用超时功能更新页面
+		function Update() {
+			counter++;
+			document.form2.numbers.value="the counter is now at "+counter;
+			ID=window.setTimeout("Update()",2000);
+
+		}
+	</script>
+</head>
+<body>
+	<h1>Creat a new window</h1>
+	<form name="winform">
+		<input type="button" value="open new window" onclick="NewWindow=window.open('','NewWindow','toolbar=no,status=no,width=200,height=100');"></input>
+
+		<input type="button" value="close new window" onclick="NewWindow.close();"></input>
+		<input type="button" value="close window" onclick="window.close();"></input>
+	</form>
+
+	<form name="form1">
+		<b>Width:</b><input type="text" name="w"></input><br>
+		<b>Height:</b><input type="text" name="h"></input><br>
+		<b>X-Position</b><input type="text" name="x"></input><br>
+		<b>Y-Position</b><input type="text" name="y"> </input><br>
+		<input type="button" value="Change window" onclick="DoIt();"></input>
+	</form>
+
+	<form name="form2">
+		<input type="text" name="numbers" size="40"></input><br>
+		<input type="button" value="reset" onclick="counter=0;"></input><br>
+		<input type="button" value="stop" onclick="window.clearTimeout(ID);"></input>
+	</form>
+	<form name="form3">
+		<input type="button" value="display an alert" onclick="window.alert('this is a test alert.');"></input><br>
+		<input type="button" value="display a confirm." onclick="window.confirm('would you like to confirm?');"> </input><br>
+		<input type="button" value="display a prompt" onclick="window.prompt('enter some text:','this is the default value.');"></input>
+	</form>
+</body>
+</html>
