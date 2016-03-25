@@ -1,0 +1,8 @@
+		body {color : blue;}
+		p { text-align: center;
+		    margin-left: 20%;
+		    margin-right: 20%}
+		H1,H2,H3 {color: red}
+		UL {color: green;
+		       font-weight: bold
+		}
