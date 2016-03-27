@@ -1,0 +1,37 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>创建可移动的层（div）</title>
+	<meta http-equiv="content-type" content="text/html charset=utf-8 ">
+	<script type="text/javascript" src="fun_13.js"></script>
+	<style type="text/css">
+		#square {
+			position: absolute;
+			top: 150;
+			left: 100;
+			width: 200;
+			height: 200;
+			border: 2px solid black;
+			padding: 10px;
+			background-color: #E0E0E0;
+		}
+	</style>
+</head>
+<body>
+	<h1>Positioning Elements</h1>
+	<hr>
+	<form name="form1">
+		<input type="button" name="left" value="<-left" onClick="pos(-1,0);"></input>
+		<input type="button" name="right" value="->right" onClick="pos(1,0);"></input>
+		<input type="button" name="up" value="up" onClick="pos(0,-1);"></input>
+		<input type="button" name="down" value="down" onClick="pos(0,1);"></input>
+		<input type="button" name="hide" value="hide" onClick="hideSquare();"></input>
+		<input type="button" name="show" value="show" onClick="showSquare();"></input>
+
+	</form>
+	<hr>
+	<div id="square">
+		<p>this square is an absolutely positioned layer that you can move using the button above.</p>
+	</div>
+</body>
+</html>
