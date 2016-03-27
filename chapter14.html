@@ -1,0 +1,56 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>隐藏和显示对象</title>
+	<meta http-equiv="content-type" content="text/html charset=gb2312">
+	<style type="text/css">
+		A{
+			text-decoration: none;
+		}
+		#productsmenu,#supportmenu,#contactmenu{
+			display: none;
+			margin-left: 2em;
+		}
+	</style>
+	
+</head>
+<body>
+	<h1 id="h1"> this is the first head.</h1>
+	<h2 id="h2">this is the second head.</h2>
+	<form name="form1">
+		<input type="checkbox" name="head1" checked onclick="showHide();"><b>show first heading</b></input>
+		<br>
+		<input type="checkbox" name="head2" checked onclick="showHide();"><b>show second heading</b></input>
+		<input type="text" name="newTitle" size="25"></input>
+		<input type="button" value="ChangeTitle" onclick="changeTitle();"></input>
+	</form>
+
+	<h1>Creat a navigation tree !</h1>
+	<p>the navigation tree allow you to expand and collapse items.</p>
+	<ul>
+		<li><a href="#" id="products" value="[+] Products">[+] Products</a>
+			<ul id="productsmenu">
+				<li><a href="prodlist.html">Product list</a></li>
+				<li><a href="order.html">Order Form</a></li>
+				<li><a href="pricelist.html">Price list</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" id="support">[+] Support</a>
+			<ul id="supportmenu">
+				<li><a href="sforum.html">support forum</a></li>
+				<li><a href="scontact">support contact</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" id="contact">[+] Contact Us</a>
+			<ul id="contactmenu">
+				<li><a href="contact1.html">servive department</a></li>
+				<li><a href="contact2.html">sales department</a></li>
+			</ul>
+		</li>
+	</ul>
+	<!--script标签放在body中以便脚本可页面中的元素添加事件处理程序-->
+	<script type="text/javascript" src="fun_14.js"></script>
+</body>
+</html>
