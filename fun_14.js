@@ -1,23 +1,23 @@
-// function changeTitle() {
-// 	//使用JavaScript修改页面中的文本
-// 	if(!document.getElementById) return;
-// 	var newTitle=document.form1.newTitle.value;
-// 	var head1=document.getElementById('h1');
-// 	head1.firstChild.nodeValue=newTitle;
-// }
-// function showHide() {
-// 	// body...
-// 	if (!document.getElementById) return;
-// 	var head1=document.getElementById('h1');
-// 	var head2=document.getElementById('h2');
+function changeTitle() {
+	//使用JavaScript修改页面中的文本
+	if(!document.getElementById) return;
+	var newTitle=document.form1.newTitle.value;
+	var head1=document.getElementById('h1');
+	head1.firstChild.nodeValue=newTitle;
+}
+function showHide() {
+	// body...
+	if (!document.getElementById) return;
+	var head1=document.getElementById('h1');
+	var head2=document.getElementById('h2');
 
 
-// 	var showhead1=document.form1.head1.checked;
-// 	var showhead2=document.form1.head2.checked;
+	var showhead1=document.form1.head1.checked;
+	var showhead2=document.form1.head2.checked;
 
-// 	head1.style.visibility=(showhead1) ? "visible":"hidden";
-// 	head2.style.visibility=(showhead2) ? "visible":"hidden";
-// }
+	head1.style.visibility=(showhead1) ? "visible":"hidden";
+	head2.style.visibility=(showhead2) ? "visible":"hidden";
+}
 
 
 // toggle触发器，parameter：e点击的事件
