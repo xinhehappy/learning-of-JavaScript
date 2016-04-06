@@ -2,6 +2,7 @@ var ajaxreq = false, ajaxCallback;
 function ajaxRequest(filename) {
 	
 	try{
+		//firefox,mozilla,safari,ie7
 		ajaxreq=new XMLHttpRequest();
 	}catch(error){
 		//ie5 or ie6
