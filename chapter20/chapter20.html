@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html charset=utf-8">
+		<title>use media and video</title>
+		<script type="text/javascript" >
+			function playSound () {
+				var obj=document.getElementById('sound')
+				try{
+					obj.DoPlay();
+				}catch (e){
+					try{
+						obj.Play();
+					}catch(e){
+						alert("No sound support!");
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<embed id= "sound" src="11.mp3" height="0" width="0" autostart="false" loop="true" enablejavascript="true">
+
+		</embed>
+		<input type="button" value="playsound" onClick="playSound();">
+	</body>
+</html>
